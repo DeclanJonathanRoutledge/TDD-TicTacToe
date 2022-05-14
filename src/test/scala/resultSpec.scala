@@ -1,15 +1,16 @@
 import org.scalatest.flatspec.AnyFlatSpec
-
 class resultSpec extends AnyFlatSpec {
-"Game" should "Result a win given three in a row" in {
-  val winningGame = winGame("X")
-  assert(Result.winChecker(winningGame) ==="Winner!")
+"A Game" should
+  "result in a win given three in a row" in {
+  val winningGame = StockGames.winGame("X")
+  assert(Result.winChecker(winningGame) ==="Winner!")}
 
-}
-  def winGame(playXorO:String): board ={
-    val win  = playBoard()
-    win.play(0,0,"O")
-    win.play(0,1,"O")
-    win.play(0,2,"O")
+  it should "not result in draw if the game is not finished" in{
+    assert(Result.drawChecker(board())=== "Game not finished yet")
   }
+
+  it should "result in draw if the game finished, but no one has won" in{
+    assert(Result.drawChecker(StockGames.drawGame())=== "Draw!")
+  }
+
 }
