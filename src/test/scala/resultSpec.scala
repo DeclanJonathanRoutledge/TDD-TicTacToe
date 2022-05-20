@@ -5,6 +5,13 @@ class resultSpec extends AnyFlatSpec {
   val winningGame = StockGames.horizontalWinGame()
   assert(Result.winChecker(winningGame) ==="Winner: O")}
 
+  it should "not result in a win given an empty board" in {
+    assert(Result.winChecker(board()) ==="Winner: O")}
+
+  it should "result in a win given an horizontal win of second row" in {
+    val winningGame = StockGames.horizontalWinGame(1)
+    assert(Result.winChecker(winningGame)==="Winner: O")}
+
   it should "not result in draw if the game is not finished" in{
     assert(Result.drawChecker(board())=== "Game not finished yet")
   }
