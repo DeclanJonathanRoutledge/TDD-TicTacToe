@@ -7,7 +7,8 @@ class TicTacToeSpec extends AnyFlatSpec{
     val emptyRow: Array[String] = Array("_",  "_", "_")
     val testBoardContinuous: playBoard = playBoard()
 
-    "A board" should  "return an empty starting board" in  {
+    behavior of "A board"
+    it should  "return an empty starting board" in  {
         val testBoard = board()
         val topRowTest = emptyRow
         assert(testBoard.topRow === topRowTest)

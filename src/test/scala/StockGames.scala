@@ -1,9 +1,21 @@
 object StockGames {
-  def winGame(playXorO: String): board = {
+  def horizontalWinGame(row : Int = 0, playXorO: String= "O"): board = {
     val win = playBoard()
-    win.play(0, 0, "O")
-    win.play(0, 1, "O")
-    win.play(0, 2, "O")
+    win.play(row, 0, playXorO )
+    win.play(row, 1, playXorO)
+    win.play(row, 2, playXorO)
+  }
+  def verticalWinGame(column : Int = 0, playXorO: String= "O"): board = {
+    val win = playBoard()
+    win.play(0, column, playXorO )
+    win.play(1, column, playXorO)
+    win.play(2, column, playXorO)
+  }
+  def diagonalWinGame(playXorO: String= "O"): board = {
+    val win = playBoard()
+    win.play(0, 0, playXorO )
+    win.play(1, 1, playXorO)
+    win.play(2, 2, playXorO)
   }
 
   def drawGame(): board = {
