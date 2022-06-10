@@ -5,8 +5,12 @@ class displayTest extends AnyFlatSpec {
 
   behavior of "Display"
   it should "format an empty board" in {
-    print(display(board()).viewBoard)
-      //assert(display(board()).viewBoard == " ")
+      assert(display(board()).viewBoard ==
+          " _ || _ || _ \n" +
+          "===||===||===\n" +
+          " _ || _ || _ \n" +
+          "===||===||===\n" +
+          " _ || _ || _ \n")
   }
 
   it should "format a full board" in {
@@ -16,10 +20,6 @@ class displayTest extends AnyFlatSpec {
         " X || O || X \n" +
         "===||===||===\n" +
         " X || O || X \n")
-  }
-
-  it should "rowFormatter" in {
-
   }
 
 }
