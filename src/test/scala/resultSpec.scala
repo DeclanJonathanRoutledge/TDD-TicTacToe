@@ -1,8 +1,7 @@
 import org.scalatest.flatspec.AnyFlatSpec
 class resultSpec extends AnyFlatSpec {
   behavior of "A Game"
-
-   it should "result in a win given three in a row" in {
+  it should "result in a win given three in a row" in {
   val winningGame = StockGames.horizontalWinGame()
   assert(Result.winChecker(winningGame) === "Winner: O")}
 

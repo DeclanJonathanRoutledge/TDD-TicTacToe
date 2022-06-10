@@ -1,8 +1,11 @@
 project/target/
 **/target
+/target
+target
 *.class
 *.iml
 *.ipr
 *.iws
 .idea
 out
+/project/target/
