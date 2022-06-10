@@ -8,6 +8,5 @@ target
 *.iws
 .idea
 out
-/project/target/
-/.bsp/
-/.idea/
+/idea
+/target/
